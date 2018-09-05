@@ -95,36 +95,45 @@ $('[data-app-dashboard-toggle-shrink]').on('click', function(e) {
   $(this).parents('.app-dashboard').toggleClass('shrink-medium').toggleClass('shrink-large');
 });
 
+var isMobile = ( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) );
+
 //Map classes toggle + tooltip
-var menuItems = $(".menu-item");
+var sideMenuItems = $(".menu-item");
+var smallMenuItems = $(".small-menu a");
 var zones = $(".zones");
 
-menuItems.hover(
-  function() {
-    $(zones[menuItems.index($(this))]).toggleClass("zones-highlight")
-  }
-);
+if(isMobile){
 
-var tooltip = $(".tooltip");
-$(".zones a").hover(
-  function() {
-    tooltip.addClass('active');
-    tooltip.html($(this).children().attr('title'));
-  },
-  function() {
-    tooltip.removeClass('active');
-  },
-);
+}
 
-$(document).on('mousemove', function(e){
-  tooltip.css({
-    left:  e.clientX + 20 - $('#map').offset().left,
-    top:   e.clientY + 20 - $('#map').offset().top
+else {
+  sideMenuItems.hover(
+    function() {
+      $(zones[sideMenuItems.index($(this))]).toggleClass("zones-highlight")
+    }
+  );
+
+  smallMenuItems.hover (
+    function() {
+      $(zones[smallMenuItems.index($(this))]).toggleClass("zones-highlight")
+    }
+  );
+
+  var tooltip = $(".tooltip");
+  $(".zones a").hover(
+    function() {
+      tooltip.addClass('active');
+      tooltip.html($(this).children().attr('title'));
+    },
+    function() {
+      tooltip.removeClass('active');
+    },
+  );
+
+  $(document).on('mousemove', function(e){
+    tooltip.css({
+      left:  e.clientX + 20 - $('#map').offset().left,
+      top:   e.clientY + 20 - $('#map').offset().top
+    });
   });
-});
-
-/* It's not just something fun. Playing a video game or going out with friends for a beer is something fun. I can live without that. Sure I like doing those things, but I could never again do it and I
-
-The main drive for all mammals is to have sex.
-
-*/
+}

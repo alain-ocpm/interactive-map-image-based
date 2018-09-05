@@ -14,9 +14,11 @@ $app-dashboard-sidebar-width: $off-canvas-width;
 
 .app-dashboard-sidebar {
   background-color: $white;
+  box-shadow: 5px 0px 5px rgba(0,0,0,0.25);
   height: 100%;
-  overflow-x: visible;
-  overflow-y: auto;
+  //overflow-x: visible;
+  //overflow-y: auto;
+  overflow: hidden;
   z-index: 1;
   transition: all $offcanvas-transition-length $offcanvas-transition-timing;
 
@@ -44,13 +46,32 @@ $app-dashboard-sidebar-width: $off-canvas-width;
   }
 
   .app-dashboard-sidebar-inner {
-    height: 100%;
+    //height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
 
+    .menu > li:nth-child(odd) > a {
+      background-color: $off-white;
+    }
+
     .menu > li > a {
       align-items: center;
+      color: $dark-gray;
       padding: 0.6368rem 1rem;
+      transition: background 0.5s;
+
+      > span {
+        transition: transform 0.5s;
+      }
+
+      &:hover {
+        background-color: $sky-blue;
+
+        > span {
+          display: inline-block;
+          transform: translateX(5px);
+        }
+      }
     }
   }
 }
@@ -78,7 +99,7 @@ $app-dashboard-sidebar-width: $off-canvas-width;
   transition: all $offcanvas-transition-length $offcanvas-transition-timing;
   overflow-y: auto;
   flex: 1 1 0;
-  padding: 20px;
+  //padding: 20px;
   background-color: $white;
 }
 
@@ -108,6 +129,8 @@ $app-dashboard-sidebar-width: $off-canvas-width;
   }
 
   .menu {
+    display: none;
+
     li {
       &::after {
         display: none;

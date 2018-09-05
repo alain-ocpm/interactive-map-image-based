@@ -1,0 +1,25 @@
+.small-menu {
+  ul {
+    list-style: none;
+    margin: 0;
+    text-align: center;
+
+    li {
+      &:nth-child(odd) {
+        a {
+          background: $off-white;
+        }
+      }
+      a {
+        display: block;
+        color: $dark-gray;
+        padding: 10px 0;
+        transition: background 0.5s;
+
+        &:hover {
+          background: $sky-blue;
+        }
+      }
+    }
+  }
+}

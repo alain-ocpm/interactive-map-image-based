@@ -68,10 +68,10 @@
 @import 'mixins/zindex';
 
 // global styles
+@import "global/style";
 @import 'global/app-dashboard';
 @import 'global/layout';
 
 // custom components
-@import 'components/navigation/main-nav';
-
+@import 'components/small-nav';
 @import 'components/footer';
