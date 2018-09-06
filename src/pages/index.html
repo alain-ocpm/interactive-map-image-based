@@ -3,7 +3,7 @@ layout: index
 meta-title: Index
 ---
 
-<div id="map" style="overflow:hidden;position: relative">
+<div id="map">
 
 
   <!-- <img class="zones" style="width: 25%" src="assets/img/star.svg"></img>
@@ -241,15 +241,10 @@ meta-title: Index
       </div>
   <img src="assets/img/carte.png"></img>
 
-  <div class="tooltip">TEST</div>
+  <div class="tooltip"></div>
 </div>
 
-<style>
-  .modal {height: 85vh}
-  .close-button > span {position: fixed}
-</style>
-
-<div class="modal large reveal" id="animatedModal10" data-reveal data-close-on-click="true" data-animation-in="fade-in" data-animation-out="fade-out" data-v-offset="50">
+<div class="modal large reveal" id="animatedModal10" data-reveal data-close-on-click="true" data-animation-in="fade-in" data-animation-out="fade-out">
   {{> test}}
   <button class="close-button" data-close aria-label="Close reveal" type="button">
     <span aria-hidden="true">&times;</span>

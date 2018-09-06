@@ -1,1 +1,44 @@
+#map {
+  overflow: hidden;
+  position: relative;
+}
 
+.zones {
+  opacity: 0;
+  position: absolute;
+  transition: opacity 0.5s;
+}
+.zones:hover {
+  opacity: 0.5;
+}
+
+.zones-highlight {
+  opacity: 0.5;
+}
+
+.tooltip {
+  display: none;
+}
+
+.tooltip.active {
+  display: block;
+}
+
+.modal {
+  height: 95vh;
+  padding-right: 32px;
+  padding-top: 32px;
+}
+
+.close-button > span {
+  background: $medium-gray;
+  color: $off-white;
+  display: block;
+  height: 32px;
+  position: fixed;
+  width: 32px;
+
+  &:hover {
+    color: red;
+  }
+}
