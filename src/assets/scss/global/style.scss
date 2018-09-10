@@ -30,15 +30,21 @@
   padding-top: 32px;
 }
 
+.close-button {
+  position: absolute;
+  top: 0; right: 0;
+}
+
+.close-button:hover {
+  > span {
+    color: red;
+  }
+}
+
 .close-button > span {
   background: $medium-gray;
   color: $off-white;
   display: block;
   height: 32px;
-  position: fixed;
   width: 32px;
-
-  &:hover {
-    color: red;
-  }
 }
