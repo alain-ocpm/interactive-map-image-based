@@ -1,4 +1,4 @@
-$app-dashboard-collapsed-sidebar-width: rem-calc(80);
+$app-dashboard-collapsed-sidebar-width: rem-calc(60);
 $app-dashboard-sidebar-width: $off-canvas-width;
 
 .app-dashboard {
@@ -31,6 +31,22 @@ $app-dashboard-sidebar-width: $off-canvas-width;
     height: 3rem;
   }
 
+  .app-dashboard-open-sidebar > button {
+    transition: transform 0.5s;
+
+    &:hover {
+      transform: translateX(5px);
+    }
+  }
+
+  .app-dashboard-close-sidebar > button {
+    transition: background-color 0.5s;
+
+    &:hover {
+      background-color: $light-gray;
+    }
+  }
+
   .app-dashboard-sidebar-block-title {
     margin-bottom: 0;
   }
@@ -58,16 +74,16 @@ $app-dashboard-sidebar-width: $off-canvas-width;
       align-items: center;
       color: $dark-gray;
       padding: 0.6368rem 1rem;
-      transition: background 0.5s;
 
       > span {
         transition: transform 0.5s;
       }
 
       &:hover {
-        background-color: $sky-blue;
+        background-color: $teal;
 
         > span {
+          color: $off-white;
           display: inline-block;
           transform: translateX(5px);
         }

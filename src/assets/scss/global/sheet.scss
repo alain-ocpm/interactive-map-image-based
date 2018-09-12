@@ -12,3 +12,42 @@
     margin-top: 0;
   }
 }
+
+.zPPP {
+  .accordion-title {
+    color: $teal;
+    font-size: 1.5rem;
+
+    &:hover {
+      color: lighten($teal, 15);
+    }
+
+    &::before {
+      margin-top: -0.8rem;
+    }
+  }
+}
+
+.sheet-article {
+  margin-bottom: 1rem;
+
+  h1 {
+    color: $teal;
+    font-size: 2rem;
+    margin-bottom: 0.25rem;
+  }
+
+  h2 {
+    color: $teal;
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+  }
+}
+
+.thumbnail + .image-caption {
+  margin-top: -0.5rem;
+}
+
+.image-caption + .image-caption {
+  margin-top: -1rem;
+}

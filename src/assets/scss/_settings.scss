@@ -78,11 +78,11 @@ $foundation-palette: (
   warning: #ffae00,
   alert: #cc4b37,
 );
-$sky-blue: #bbbbff;
+$teal: #0f3340;
 $off-white: #f1f1f1;
 $light-gray: #e6e6e6;
-$medium-gray: #cacaca;
-$dark-gray: #6f6f6f;
+$medium-gray: #949494;
+$dark-gray: #484848;
 $black: #0a0a0a;
 $white: #fefefe;
 $body-background: $white;
@@ -741,7 +741,7 @@ $reveal-padding: $global-padding;
 $reveal-border: none;
 $reveal-radius: $global-radius;
 $reveal-zindex: 1005;
-$reveal-overlay-background: rgba($black, 0.45);
+$reveal-overlay-background: rgba($black, 0.75);
 
 // 48. Slider
 // ----------
