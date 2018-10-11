@@ -7,6 +7,13 @@
   opacity: 0;
   position: absolute;
   transition: opacity 0.5s;
+
+  path {
+    fill: #5696AD;
+    fill-opacity: 1;
+    fill-rule: evenodd;
+    stroke: none;
+  }
 }
 .zones:hover {
   opacity: 0.5;
