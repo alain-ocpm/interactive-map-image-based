@@ -9,7 +9,36 @@
   }
 
   h2 {
+    font-size: 2rem;
     margin-top: 0;
+  }
+}
+
+.par {
+  margin-bottom: 1rem;
+}
+
+ul.issues {
+  list-style: none;
+
+  li {
+    margin-bottom: 1rem;
+    &:before {
+      content: "➤";
+      padding-right: 8px;
+    }
+  }
+}
+
+ul.dashlist {
+  list-style: none;
+
+  li {
+    margin-bottom: 1rem;
+    &:before {
+      content: "-";
+      padding-right: 8px;
+    }
   }
 }
 
@@ -53,4 +82,8 @@
 
 .image-caption + .image-caption {
   margin-top: -1rem;
+}
+
+.slick-slide {
+  margin: 0 8px;
 }

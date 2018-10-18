@@ -46,38 +46,6 @@ injector.inject(
   perInjectionCallback
 );
 
-// slick carousel
-$(".content-carousel").slick({
-  // normal options...
-  speed: 5000,
-	autoplay: true,
-	autoplaySpeed: 0,
-	cssEase: 'linear',
-  slidesToShow: 5,
-	slidesToScroll: 1,
-  infinite: true,
-  swipeToSlide: true,
-	centerMode: true,
-  focusOnSelect: true,
-  // the magic
-  responsive: [{
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 3,
-        infinite: true
-      }
-    }, {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 2,
-        dots: true
-      }
-    }, {
-      breakpoint: 300,
-      settings: "unslick" // destroys slick
-    }]
-});
-
 // tablesaw table plugin
 $(function () {
   $(document)
@@ -137,3 +105,33 @@ else {
     });
   });
 }
+
+//Kinda hacky, but should work under normal circumstances because down.zf.accordion should always be fired after click
+
+var accItem;
+
+$(".accordion-item").click(function(e){
+  var target = e.target.parentElement;
+  accItem = target;
+});
+
+$(".accordion").on('down.zf.accordion', function(e) {
+  if($(accItem).find(".content-carousel").length) {
+    $(".content-carousel").slick({
+      speed: 500,
+      arrows: false,
+      autoplay: true,
+      autoplaySpeed: 8000,
+      cssEase: 'linear',
+      infinite: true,
+      swipeToSlide: true,
+      centerMode: true,
+      focusOnSelect: true,
+    });
+  }
+});
+
+$(".accordion").on('up.zf.accordion', function(e) {
+  if($(".slick-initialized").length && $(accItem).find(".content-carousel").length)
+    $(".content-carousel").slick('unslick');
+})
